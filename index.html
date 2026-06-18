@@ -1,0 +1,166 @@
+# Agro Forte, Futuro Sustentável 🌱🚜
+
+Este projeto é uma ferramenta em Python projetada para apoiar produtores rurais na transição para práticas agrícolas mais sustentáveis e eficientes. O objetivo é unir a força do agronegócio com a preservação ambiental.
+
+## 🚀 Funcionalidades
+
+* **Análise de Eficiência de Irrigação:** Calcula o uso ideal de água com base na área da cultura.
+* **Calculadora de Créditos de Carbono:** Estima o sequestro de CO₂ com base no plantio de árvores nativas.
+* **Dicas de Sustentabilidade:** Sugestões práticas para manejo de solo e biodiversidade.
+
+## 🛠️ Como Executar o Projeto
+
+1. Certifique-se de ter o **Python 3.x** instalado.
+2. Clone este repositório:
+   ```bash
+   git clone [https://github.com/seu-usuario/agro-sustentavel.git](https://github.com/seu-usuario/agro-sustentavel.git)
+   cd agro-sustentavel
+   python main.py
+   ---
+
+### 2. O Código Principal: `main.py`
+Este é um script interativo em Python que simula um painel de controle para o fazendeiro do futuro. Copie e cole o código abaixo em um arquivo chamado `main.py`.
+
+```python
+# main.py - Painel Agro Forte e Sustentável
+
+def exibir_menu():
+    print("\n" + "="*40)
+    print("    AGRO FORTE & FUTURO SUSTENTÁVEL")
+    print("="*40)
+    print("1. Calcular Eficiência de Irrigação")
+    print("2. Estimar Sequestro de Carbono")
+    print("3. Ver Dicas de Manejo Sustentável")
+    print("4. Sair")
+    print("="*40)
+
+def calcular_irrigacao():
+    print("\n--- Otimização de Irrigação ---")
+    try:
+        hectares = float(input("Digite o tamanho da área de plantio (em hectares): "))
+        # Média hipotética de 5000 litros por hectare/dia dependendo da cultura
+        litros_necessarios = hectares * 5000
+        print(f"-> Para {hectares} hectares, o consumo estimado ideal é de {litros_necessarios:,.0f} litros de água por dia.")
+        print("Dica: Utilize sensores de umidade no solo para reduzir esse volume em até 30%!")
+    except ValueError:
+        print("Por favor, insira um número válido.")
+
+def calcular_carbono():
+    print("\n--- Calculadora de Carbono ---")
+    try:
+        arvores = int(input("Quantas árvores nativas foram plantadas na propriedade? "))
+        # Estimativa média: uma árvore jovem absorve cerca de 22kg de CO2 por ano
+        co2_absorvido = arvores * 22
+        print(f"-> Suas {arvores} árvores estão sequestrando cerca de {co2_absorvido:,} kg de CO₂ por ano!")
+        print("Isso fortalece sua propriedade para a certificação de créditos de carbono.")
+    except ValueError:
+        print("Por favor, insira um número inteiro válido.")
+
+def exibir_dicas():
+    print("\n--- Práticas para um Agro Forte e Sustentável ---")
+    dicas = [
+        "1. Rotação de Culturas: Alterne as espécies para melhorar a saúde do solo e evitar pragas.",
+        "2. Plantio Direto: Deixe os restos vegetais da colheita anterior no solo para proteger contra erosão.",
+        "3. Integração Lavoura-Pecuária-Floresta (ILPF): Otimize o espaço e aumente a biodiversidade.",
+        "4. Adubação Verde: Use plantas leguminosas para fixar nitrogênio no solo naturalmente."
+    ]
+    for dica in dicas:
+        print(dica)
+
+# Loop principal do programa
+def main():
+    while True:
+        exibir_menu()
+        opcao = input("Escolha uma opção (1-4): ")
+        
+        if opcao == "1":
+            calcular_irrigacao()
+        elif opcao == "2":
+            calcular_carbono()
+        elif opcao == "3":
+            exibir_dicas()
+        elif opcao == "4":
+            print("\nObrigado por apoiar o futuro do planeta e da agricultura! Até logo.")
+            break
+        else:
+        git init
+git add .
+git commit -m "Primeiro commit: Estrutura do Agro Sustentável"
+git branch -M main
+git remote add origin LINK_DO_SEU_REPOSITORIO_AQUI
+git push -u origin main
+# analise_solo.py - Gestão Sustentável de Nutrientes do Solo
+
+def exibir_cabecalho():
+    print("\n" + "="*45)
+    print("  SISTEMA DE ANÁLISE DE NUTRIENTES DO SOLO 🌱")
+    print("="*45)
+
+def avaliar_nutriente(nome, valor, ideal_min, ideal_max):
+    """Avalia se o nutriente está em nível baixo, ideal ou alto."""
+    if valor < ideal_min:
+        return "BAIXO ⚠️ (Necessita de reposição)"
+    elif valor > ideal_max:
+        return "ALTO 🛑 (Risco de lixiviação/desperdício)"
+    else:
+        return "IDEAL ✅ (Solo saudável)"
+
+def gerar_recomendacao(n_status, p_status, k_status):
+    print("\n--- RECOMENDAÇÕES SUSTENTÁVEIS ---")
+    
+    if "BAIXO" in n_status:
+        print("- Para o Nitrogênio baixo: Considere o plantio de leguminosas (como feijão ou soja) para fixação biológica de nitrogênio, ou use esterco curtido.")
+    
+    if "BAIXO" in p_status:
+        print("- Para o Fósforo baixo: Utilize fosfato natural ou compostagem orgânica enriquecida para liberação gradual.")
+        
+    if "BAIXO" in k_status:
+        print("- Para o Potássio baixo: Aplique cinzas de madeira (com moderação) ou esterco de aves.")
+
+    if "ALTO" in n_status or "ALTO" in p_status or "ALTO" in k_status:
+        print("- Atenção: Níveis altos indicam que você deve suspender a fertilização desses nutrientes para evitar a contaminação de lençóis freáticos.")
+        
+    if "IDEAL" in n_status and "IDEAL" in p_status and "IDEAL" in k_status:
+        print("🎉 Parabéns! Seu solo está equilibrado. Continue com a rotação de culturas para manter a biodiversidade.")
+
+def main():
+    exibir_cabecalho()
+    
+    print("Insira os dados da análise laboratorial (em mg/dm³ ou conforme sua região):")
+    try:
+        # Valores de referência hipotéticos para um solo médio
+        n = float(input("Nível de Nitrogênio (N): "))
+        p = float(input("Nível de Fósforo (P): "))
+        k = float(input("Nível de Potássio (K): "))
+        
+        n_status = avaliar_nutriente("Nitrogênio", n, 20, 50)
+        p_status = avaliar_nutriente("Fósforo", p, 15, 40)
+        k_status = avaliar_nutriente("Potássio", k, 45, 90)
+        
+        print("\n" + "-"*30)
+        print(f"Nitrogênio (N): {n_status}")
+        print(f"Fósforo (P):    {p_status}")
+        print(f"Potássio (K):   {k_status}")
+        print("-"*30)
+        
+        gerar_recomendacao(n_status, p_status, k_status)
+        
+    except ValueError:
+        print("Erro: Por favor, insira apenas números para os níveis de nutrientes.")
+
+if __name__ == "__main__":
+    main()
+    ## 🚀 Funcionalidades
+
+* **Análise de Eficiência de Irrigação (`main.py`):** Calcula o uso ideal de água com base na área da cultura.
+* **Calculadora de Créditos de Carbono (`main.py`):** Estima o sequestro de CO₂ com base no plantio de árvores nativas.
+* **Análise de Saúde do Solo (`analise_solo.py`):** Diagnostica os níveis de NPK do solo e recomenda soluções orgânicas e regenerativas.
+
+## 🛠️ Como Executar o Projeto
+
+Você pode rodar o painel geral ou a ferramenta de análise de solo:
+
+* Para o painel de irrigação e carbono:
+  ```bash
+  python main.py
+  
